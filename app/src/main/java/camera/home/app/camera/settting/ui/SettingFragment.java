@@ -16,15 +16,18 @@ import android.widget.Toast;
 import camera.home.app.camera.R;
 import camera.home.app.camera.Uitls.InformationWebPage;
 import camera.home.app.camera.Uitls.ReadContentWeb;
-import camera.home.app.camera.home.ui.TabHomeActivity;
 
 /**
  * Created by Hai on 11/9/2016.
  */
 
-public class TabSettingActivity extends Fragment {
+public class SettingFragment extends Fragment {
     private EditText txtIPCamera,txtSubfixCamera,txtIpCapsule,txtSubSub;
     private Button btnSave;
+
+    @Override
+    public void setArguments(Bundle args) {
+    }
 
     @Nullable
     @Override

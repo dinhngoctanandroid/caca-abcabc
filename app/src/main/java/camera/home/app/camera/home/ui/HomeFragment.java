@@ -32,7 +32,7 @@ import camera.home.app.camera.Uitls.ReadInformationPage;
  * Created by Hai on 11/9/2016.
  */
 
-public class TabHomeActivity extends Fragment {
+public class HomeFragment extends Fragment {
     private boolean ischeckCB = true;
     private VideoView videoView;
     private String videoRtspUrl = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
@@ -43,6 +43,10 @@ public class TabHomeActivity extends Fragment {
     private CheckBox chbMod1, chbMod2, chbMod3, chbMod4;
     private TextView txtMode1, txtMode2, txtMode3, txtMode4;
     private ProgressBar progressBar;
+
+    @Override
+    public void setArguments(Bundle args) {
+    }
 
     @Nullable
     @Override
@@ -224,7 +228,7 @@ public class TabHomeActivity extends Fragment {
         } catch (Exception e) {
             link_camera = "";
         }
-        try {
+        /*try {
             if (link_camera.equals("")) {
                 SharedPreferences sharedPref = getActivity().getSharedPreferences("CAP", Context.MODE_PRIVATE);
                 link_camera = sharedPref.getString("RTSPLINK", "");
@@ -254,10 +258,10 @@ public class TabHomeActivity extends Fragment {
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             // Close the progress bar and play the video
             public void onPrepared(MediaPlayer mp) {
-                progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);*//*
 
             }
-        });
+        });*/
 
 
         new ReadContentWebPrint().execute(InformationWebPage.CMD_PRINT);
