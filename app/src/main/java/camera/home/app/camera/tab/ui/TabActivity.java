@@ -19,23 +19,26 @@ public class TabActivity extends AppCompatActivity {
     private AdapterTab mAdapterTab;
     private ViewPager mViewPager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab);
-        SharedPreferences sharedPref = getSharedPreferences("CAP",Context.MODE_PRIVATE);
-        InformationWebPage.IP = sharedPref.getString("IP","");
-        String id = sharedPref.getString("IP","");
-        Log.d("PRINT_CAPSULE",InformationWebPage.IP);
-        if (InformationWebPage.IP.equals(""))
-        {
+
+        SharedPreferences sharedPref = getSharedPreferences("CAP", Context.MODE_PRIVATE);
+        InformationWebPage.IP = sharedPref.getString("IP", "");
+        String id = sharedPref.getString("IP", "");
+        Log.d("PRINT_CAPSULE", InformationWebPage.IP);
+
+        if (InformationWebPage.IP.equals("")) {
             InformationWebPage.IP = "192.168.2.103";
-            id= "192.168.2.103";
+            id = "192.168.2.103";
 
             String print = InformationWebPage.HTTP + id + InformationWebPage.PRINT_CAPSULE;
-            InformationWebPage.CMD_PRINT =print;
+            InformationWebPage.CMD_PRINT = print;
 
             String ip_camera = InformationWebPage.HTTP + id + InformationWebPage.IP_CAMERA;
             InformationWebPage.IP_CMR = ip_camera;
@@ -44,7 +47,7 @@ public class TabActivity extends AppCompatActivity {
             String modeOff = InformationWebPage.HTTP + id + InformationWebPage.CAP_OFF;
             InformationWebPage.CAPSULE_ON = modeOn;
             InformationWebPage.CAPSULE_OFF = modeOff;
-            String capSub =InformationWebPage.HTTP + id + InformationWebPage.IP_SUBFIX;
+            String capSub = InformationWebPage.HTTP + id + InformationWebPage.IP_SUBFIX;
             InformationWebPage.CAPSULE_SUBFIX_SELECT = capSub;
 
             String mode = InformationWebPage.HTTP + id + InformationWebPage.IP_MODE;
@@ -52,9 +55,9 @@ public class TabActivity extends AppCompatActivity {
 
             String subSubFix = InformationWebPage.HTTP + id + InformationWebPage.SUB;
             InformationWebPage.SUB_SUB = subSubFix;
-        }else {
+        } else {
             String print = InformationWebPage.HTTP + id + InformationWebPage.PRINT_CAPSULE;
-            InformationWebPage.CMD_PRINT =print;
+            InformationWebPage.CMD_PRINT = print;
 
             String ip_camera = InformationWebPage.HTTP + id + InformationWebPage.IP_CAMERA;
             InformationWebPage.IP_CMR = ip_camera;
@@ -64,7 +67,7 @@ public class TabActivity extends AppCompatActivity {
             InformationWebPage.CAPSULE_ON = modeOn;
             InformationWebPage.CAPSULE_OFF = modeOff;
 
-            String capSub =InformationWebPage.HTTP + id + InformationWebPage.IP_SUBFIX;
+            String capSub = InformationWebPage.HTTP + id + InformationWebPage.IP_SUBFIX;
             InformationWebPage.CAPSULE_SUBFIX_SELECT = capSub;
 
             String mode = InformationWebPage.HTTP + id + InformationWebPage.IP_MODE;
@@ -83,8 +86,6 @@ public class TabActivity extends AppCompatActivity {
         final TabLayout.Tab setting = mTabLayout.newTab();
         final TabLayout.Tab about = mTabLayout.newTab();
 
-        mTabLayout.setVisibility(View.GONE);
-
         View homeView = getLayoutInflater().inflate(R.layout.tab_home, null);
         View setView = getLayoutInflater().inflate(R.layout.tab_setting, null);
         View setAbout = getLayoutInflater().inflate(R.layout.tab_about, null);
@@ -93,12 +94,26 @@ public class TabActivity extends AppCompatActivity {
         setting.setCustomView(setView);
         about.setCustomView(setAbout);
 
-        mTabLayout.addTab(home,0);
-        mTabLayout.addTab(setting,1);
-        mTabLayout.addTab(about,2);
+        mTabLayout.addTab(home, 0);
+        mTabLayout.addTab(setting, 1);
+        mTabLayout.addTab(about, 2);
 
-        mAdapterTab = new AdapterTab(getSupportFragmentManager(), mTabLayout.getTabCount());
+        mAdapterTab = new AdapterTab(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapterTab);
+        mViewPager.setCurrentItem(mAdapterTab.getMiddlePosition(), false);
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
 
+            @Override
+            public void onPageSelected(int position) {
+                Log.d("Adapter", "View pager onPageSelected = " + position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
     }
 }

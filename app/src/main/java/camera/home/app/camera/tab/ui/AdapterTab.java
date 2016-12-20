@@ -1,36 +1,46 @@
 package camera.home.app.camera.tab.ui;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.view.View;
+import android.util.Log;
 
-import camera.home.app.camera.about.ui.TabAboutActivity;
-import camera.home.app.camera.home.ui.TabHomeActivity;
-import camera.home.app.camera.settting.ui.TabSettingActivity;
+import java.util.ArrayList;
+import java.util.List;
+
+import camera.home.app.camera.about.ui.AboutFragment;
+import camera.home.app.camera.home.ui.HomeFragment;
+import camera.home.app.camera.settting.ui.SettingFragment;
 
 /**
  * Created by Hai on 11/2/2016.
  */
 public class AdapterTab extends FragmentStatePagerAdapter
 {
-    int mNumOfTabs;
-    private FragmentManager fm;
+    private static final int LOOP = 1000;
 
-    public AdapterTab(FragmentManager fm, int mNumOfTabs) {
+    private List<Fragment> mListFragments = new ArrayList<>();
+
+    public AdapterTab(FragmentManager fm) {
         super(fm);
-        this.mNumOfTabs = mNumOfTabs;
-        this.fm = fm;
+
+        // TODO why cached fragments cannot be used with java.lang.IllegalStateException: Fragment already active
+        mListFragments.add(new HomeFragment());
+        mListFragments.add(new SettingFragment());
+        mListFragments.add(new AboutFragment());
     }
 
     @Override
     public Fragment getItem(int position) {
+        Log.d("Adapter", "View pager get item position = " + position);
+        position = position % mListFragments.size();
+        Log.d("Adapter", "View pager get item (calculated) position = " + position);
+        // return mListFragments.get(position);
         switch (position)
         {
-            case 0: return new TabHomeActivity();
-            case 1: return new TabSettingActivity();
-            case 2: return new TabAboutActivity();
+            case 0: return new HomeFragment();
+            case 1: return new SettingFragment();
+            case 2: return new AboutFragment();
             default:
                 return null;
         }
@@ -38,16 +48,10 @@ public class AdapterTab extends FragmentStatePagerAdapter
 
     @Override
     public int getCount() {
-        return mNumOfTabs;
+        return mListFragments.size() * LOOP;
     }
 
-    @Override
-    public int getItemPosition(Object object) {
-        return POSITION_NONE;
-    }
-
-    @Override
-    public Object instantiateItem(View container, int position) {
-        return super.instantiateItem(container, position);
+    public int getMiddlePosition() {
+        return mListFragments.size() * LOOP / 2;
     }
 }

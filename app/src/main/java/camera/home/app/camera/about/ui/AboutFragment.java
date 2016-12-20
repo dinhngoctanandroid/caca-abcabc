@@ -17,8 +17,12 @@ import camera.home.app.camera.Uitls.ReadInformationPage;
  * Created by Hai on 11/16/2016.
  */
 
-public class TabAboutActivity extends Fragment {
+public class AboutFragment extends Fragment {
     private TextView txtPrintTab;
+
+    @Override
+    public void setArguments(Bundle args) {
+    }
 
     @Nullable
     @Override
@@ -29,7 +33,7 @@ public class TabAboutActivity extends Fragment {
         StrictMode.setThreadPolicy(policy);
         /// we add 2 line when we want use the urlconnection in thread main UI
         String testPrint = ReadInformationPage.getInformationWebPage(InformationWebPage.HTTP + InformationWebPage.IP + InformationWebPage.PRINT_CAPSULE);
-        txtPrintTab.setText(InformationWebPage.CONTENT);
+        txtPrintTab.setText(testPrint);
         return tabAbout;
     }
 }
