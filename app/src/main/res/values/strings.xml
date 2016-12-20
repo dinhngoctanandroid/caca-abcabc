@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Camera</string>
+    <string name="subfix">Subfix</string>
+    <string name="ok">Ok</string>
+    <string name="print">Print</string>
+    <string name="ip">IP</string>
+    <string name="mod1">Mode 1</string>
+    <string name="mod2">Mode 2</string>
+    <string name="mod3">Mode 3</string>
+    <string name="mod4">Mode 4</string>
+    <string name="stateCamera">The State Camera :  </string>
+    <string name="stateOn">The state Camera is ON</string>
+    <string name="stateOff">The state Camera is OFF</string>
+    <string name="testSubfix">Please test Subfix!</string>
+    <string name="testIp">Please test IP!</string>
+    <string name="testSystem">We cant get the information ! (Please to test System) .</string>
+    <string name="AVS">Android Video Streaming Tutorial</string>
+    <string name="buffering">Buffering...</string>
+    <string name="information">Information</string>
+    <string name="wait">Saving...</string>
+</resources>

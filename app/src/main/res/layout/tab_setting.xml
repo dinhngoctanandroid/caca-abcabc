@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backrepeat">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_margin="@dimen/dp20"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:textColor="@android:color/white"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="IP Camera"/>
+            <EditText
+                android:textColor="@android:color/white"
+                android:theme="@style/MyEditTextTheme"
+                android:layout_weight="1"
+                android:id="@+id/txtIPCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@android:color/white"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Subfix Main"/>
+            <EditText
+                android:theme="@style/MyEditTextTheme"
+                android:textColor="@android:color/white"
+                android:id="@+id/txtSubfixCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@android:color/white"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Subfix Sub"/>
+            <EditText
+                android:textColor="@android:color/white"
+                android:theme="@style/MyEditTextTheme"
+                android:layout_weight="1"
+                android:id="@+id/txtSubSub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@android:color/white"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="IP Capsule"/>
+            <EditText
+                android:layout_centerInParent="true"
+                android:theme="@style/MyEditTextTheme"
+                android:textColor="@android:color/white"
+                android:id="@+id/txtIpCapsule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Mail"
+                android:textColor="@android:color/white"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_centerInParent="true"
+                android:layout_marginRight="100dp"
+                android:layout_gravity="center"
+                android:theme="@style/MyEditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Switch
+                android:layout_marginRight="-30dp"
+                android:textOn="On"
+                android:textOff="Off"
+                android:layout_alignParentRight="true"
+                android:scaleX="0.5"
+                android:scaleY="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Phone"
+                android:textColor="@android:color/white"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_centerInParent="true"
+                android:layout_marginRight="100dp"
+                android:layout_gravity="center"
+                android:theme="@style/MyEditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Switch
+                android:layout_marginRight="-30dp"
+                android:textOn="On"
+                android:textOff="Off"
+                android:layout_alignParentRight="true"
+                android:scaleX="0.5"
+                android:scaleY="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="SMS"
+                android:textColor="@android:color/white"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_centerInParent="true"
+                android:layout_marginRight="100dp"
+                android:layout_gravity="center"
+                android:theme="@style/MyEditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Switch
+                android:layout_marginRight="-30dp"
+                android:textOn="On"
+                android:textOff="Off"
+                android:layout_alignParentRight="true"
+                android:scaleX="0.5"
+                android:scaleY="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Audio"
+                android:textColor="@android:color/white"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_centerInParent="true"
+                android:layout_marginRight="100dp"
+                android:layout_gravity="center"
+                android:theme="@style/MyEditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Switch
+                android:layout_marginRight="-30dp"
+                android:textOn="On"
+                android:textOff="Off"
+                android:layout_alignParentRight="true"
+                android:scaleX="0.5"
+                android:scaleY="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/btnSave"/>
+    </LinearLayout>
+</LinearLayout>
